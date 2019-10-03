@@ -2,6 +2,8 @@ import React from 'react';
 import TodoList from './components/TodoComponents/TodoList'
 import TodoForm from './components/TodoComponents/TodoForm'
 import "./components/TodoComponents/Todo.css"
+import  Button  from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 
 class App extends React.Component {
   constructor() {
@@ -84,18 +86,23 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <TodoList 
-        todos={this.state.todos}
-        toggleItem={this.toggleItem} 
-        />
-        <TodoForm 
-        addItem={this.addItem}
-        />
-        <button onClick={this.clearCompleted} >Clear Completed</button>
-        
-        
-      </div>
+      <main>
+        <Card className="text-center">
+          <Card.Header>My Todo List!</Card.Header>
+            <Card.Body>
+                <TodoList 
+                  todos={this.state.todos}
+                  toggleItem={this.toggleItem} 
+                  />
+                <TodoForm 
+                  addItem={this.addItem}
+                  />
+                <Button onClick={this.clearCompleted} >Clear Completed</Button>
+            </Card.Body>
+          <Card.Footer className="text-muted">react app</Card.Footer>
+        </Card>
+      </main>
+      
     );
   }
 }
