@@ -8,7 +8,7 @@ const TodoList = props => {
         <Todo 
           key={item.id}
           todo={item}
-            
+          onClick={(e) => props.toggleItem(e, item.id)}  
           />
       ))}
       
