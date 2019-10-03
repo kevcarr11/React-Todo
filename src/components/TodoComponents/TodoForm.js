@@ -22,6 +22,7 @@ handleSubmit = (event) => {
   })
 }
 
+
   render() {
     return (
       <div>
@@ -32,7 +33,6 @@ handleSubmit = (event) => {
             onChange={this.handleChange}
            />
            <button>Add Todo</button>
-           <button>Clear Completed</button>
         </form>
       </div>
     )
