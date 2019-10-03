@@ -90,14 +90,16 @@ class App extends React.Component {
         <Card className="text-center">
           <Card.Header>My Todo List!</Card.Header>
             <Card.Body>
+              <h1>Add a task</h1>
+                <Card.Title className="cardTitle"><TodoForm 
+                  addItem={this.addItem}
+                  /></Card.Title>
                 <TodoList 
                   todos={this.state.todos}
                   toggleItem={this.toggleItem} 
                   />
-                <TodoForm 
-                  addItem={this.addItem}
-                  />
-                <Button onClick={this.clearCompleted} >Clear Completed</Button>
+                
+                <Button className="clrBtn" onClick={this.clearCompleted} >Clear Completed</Button>
             </Card.Body>
           <Card.Footer className="text-muted">react app</Card.Footer>
         </Card>

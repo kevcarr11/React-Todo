@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import  Button  from 'react-bootstrap/Button';
 
 export default class TodoForm extends Component {
   constructor(){
@@ -20,6 +21,7 @@ handleSubmit = (event) => {
   this.setState({
     value: ""
   })
+  // localStorage.setItem("task", JSON.stringify(this.state.value))
 }
 
 
@@ -32,7 +34,7 @@ handleSubmit = (event) => {
             value={this.state.value}
             onChange={this.handleChange}
            />
-           <button>Add Todo</button>
+           <Button type="submit" className="todoBtn">Add Todo</Button>
         </form>
       </div>
     )

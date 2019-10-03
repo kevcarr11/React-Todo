@@ -1,18 +1,21 @@
 import React from 'react'
 import Todo from './Todo';
+import ListGroup from 'react-bootstrap/ListGroup'
 
 const TodoList = props => {
+
+
   return (
-    <div>
-      {props.todos.map(item => (
+    <ListGroup>
+      <ListGroup.Item>{props.todos.map(item => (
         <Todo 
           key={item.id}
           todo={item}
           onClick={(e) => props.toggleItem(e, item.id)}  
           />
       ))}
-      
-    </div>
+      </ListGroup.Item>
+    </ListGroup>
   )
 }
 
